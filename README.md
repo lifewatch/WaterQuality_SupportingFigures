@@ -1,0 +1,2 @@
+# WaterQuality_SupportingFigures
+The codes in this repository are made publically accessible in order to support the datapaper “Mortelmans J, Deneudt K, Cattrijsse A, Beauchard O, Daveloose I, Vyverman W, Vanaverbeke J, Timmermans J, Peene J, Roose P, Knockaert M, Chou L, Sanders R, Stinchcombe M, Kimpe P, Lammens V, Theetaert H, Gkritzalis T, Hernandez F, Mees J. (2019, submitted to Nature Scientific Data). Nutrient, pigment, suspended matter and turbidity measurements in the Belgian Part of the North Sea.”
