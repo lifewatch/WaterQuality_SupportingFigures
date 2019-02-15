@@ -7,7 +7,7 @@ library(ggplot2)
 
 #### Setup ####
 # Set working directory
-setwd("~/R/FinalScripts_DatapaperWaterquality/Seasonality")
+# setwd("~/R/FinalScripts_DatapaperWaterquality/Seasonality")
 
 #clean all
 rm(list=ls(all=TRUE))
@@ -22,7 +22,7 @@ require(mapdata)
 require(prettymapr)
 
 ### Data importation and cleaning
-t=read.csv("Fig1-3_Mapping.csv",h=T,quote="")
+t=read.csv("data/Fig1-3_Mapping.csv",h=T,quote="")
 t=t[-nrow(t),]
 colnames(t)
 t=t[,-ncol(t)]
@@ -38,7 +38,7 @@ t$sea=t$month
 levels(t$sea)=rep(1:4,rep(3,4))
 
 ### Visualization
-xy=read.csv("Fig1-3_xy.csv",h=T,row.names=1)
+xy=read.csv("data/Fig1-3_xy.csv",h=T,row.names=1)
 xy=xy[rownames(xy)%in%t$Code,]
 xy=xy[order(rownames(xy)),]
 t=t[order(t$Code),]
@@ -74,16 +74,16 @@ w2=w2/max(w2)
 city=c("Duinkerke","Nieuwpoort","Oostende","Zeebrugge","Vlissingen")
 xcity=c(2.48,2.75,2.92,3.24,3.58)
 ycity=c(51.05,51.15,51.21,51.33,51.46)
-p=read.csv("Fig1-3_PolyBelgium.csv",h=T)
+p=read.csv("data/Fig1-3_PolyBelgium.csv",h=T)
 p=SpatialPoints(p)
 p=Polygon(p)
 p=Polygons(list(p),ID="1")
 p=SpatialPolygons(list(p))
-r=raster("bat")
+r=raster("data/bat")
 values(r)[values(r)>0]=0
 values(r)[!is.na(values(r))]=-values(r)[!is.na(values(r))]
 
-pdf("1_Map of the sampling area.pdf",width=15,height=10)
+pdf("fig/1_Map of the sampling area.pdf",width=15,height=10)
 par(mar=c(3,4.5,1,8),xaxs="i",yaxs="i",cex.axis=1.5)
 rx=c(1.8,3.8)
 ry=c(51.0,52.0)
@@ -121,7 +121,7 @@ dev.off()
 
 
 
-pdf("4_Temporal data availability in the sampled area.pdf",width=15,height=6)
+pdf("fig/4_Temporal data availability in the sampled area.pdf",width=15,height=6)
 m=matrix(1:15,nr=3,nc=5,byrow=T)
 layout(m,width=c(0.1,1,1,1,1),height=c(0.1,1,1))
 par(mar=c(0,0,0,0),xaxs="i",yaxs="i")
