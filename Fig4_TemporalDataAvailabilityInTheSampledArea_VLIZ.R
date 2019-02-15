@@ -6,14 +6,14 @@ library(ggplot2)
 
 #### Setup ####
 # Set working directory
-setwd("~")
+# setwd("~")
 
 
 #clean all
 rm(list=ls(all=TRUE))
 
 # Load data (export from MIDAS) and prepare columns
-data <- read.csv("Fig4_dataframe.csv", header=TRUE)
+data <- read.csv("data/Fig4_dataframe.csv", header=TRUE)
 data$date <- as.Date(data$StartDate, "%d-%b-%y")
 data$Code <- as.character(data$Code)
 data <- data[order(data$Code),]
