@@ -6,7 +6,7 @@
 library(ggplot2)
 
 #### Setup ####
-# Set working directory
+# Set working directory 
 # setwd("~/R/FinalScripts_DatapaperWaterquality/Seasonality")
 
 #clean all
