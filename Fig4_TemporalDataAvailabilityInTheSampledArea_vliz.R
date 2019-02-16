@@ -44,5 +44,5 @@ ggplot(data, aes(x=date, y=Code))+
   facet_wrap(~ data$ParameterGroup)
 
 #export PDF
-ggsave("4_Temporal data availability in the sampled area.pdf", plot = last_plot(), scale = 2, width = NA, height = NA, dpi = 300, limitsize = TRUE)
+ggsave("fig/4_Temporal data availability in the sampled area.pdf", plot = last_plot(), scale = 2, width = NA, height = NA, dpi = 300, limitsize = TRUE)
 
